@@ -215,7 +215,7 @@ void show(struct node *head,int no)
     printf("Enter the date in DD MM YYYY:\t");
     scanf("%d %d %d",&dd,&mm,&yy);
     days=Dbtw(dd,mm,yy,q->Date.day,q->Date.month,q->Date.year);
-    q->charge=q->charge+(q->bed*200*days);
+    q->charge=q->charge+(q->bed*500*days);
     printf("Application number:\t%d\n",q->app_no);
     printf("Applicant contact number:\t%ld\n",q->No);
     printf("Applicant guardian contact number:\t%ld\n",q->Ano);
@@ -234,6 +234,7 @@ void show(struct node *head,int no)
         case 4: a=1000000; break;
       }
     }
+    printf("Applicant bed charges till date:\t%d\n",q->bed*500*days);
     if(a>q->charge){ printf("Insurance company has taken care of all your bills\n"); q->charge=0; }
     if(a<q->charge){ q->charge=q->charge-a; }
     printf("Applicant bill till date:\t%d\n",q->charge);
